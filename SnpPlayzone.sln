@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnpPlayzone.Tests.xUnit", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnpPlayzone.Core.Tests.xUnit", "SnpPlayzone.Core.Tests.xUnit\SnpPlayzone.Core.Tests.xUnit.csproj", "{D89CC108-06AC-D15E-1478-D72E99A2CF1A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SnpPlayzone.EfCore", "SnpPlayzone.EfCore\SnpPlayzone.EfCore.csproj", "{224E1586-0DC5-46AA-A6CA-515628A2D187}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{46F73A44-9CE9-F264-2BFB-E45D15D2125E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D89CC108-06AC-D15E-1478-D72E99A2CF1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D89CC108-06AC-D15E-1478-D72E99A2CF1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{224E1586-0DC5-46AA-A6CA-515628A2D187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{224E1586-0DC5-46AA-A6CA-515628A2D187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{224E1586-0DC5-46AA-A6CA-515628A2D187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{224E1586-0DC5-46AA-A6CA-515628A2D187}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

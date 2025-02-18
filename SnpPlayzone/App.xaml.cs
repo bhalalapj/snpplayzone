@@ -4,7 +4,7 @@ using System.Windows;
 using System.Windows.Threading;
 
 using CommunityToolkit.WinUI.Notifications;
-
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -15,6 +15,7 @@ using SnpPlayzone.Contracts.Services;
 using SnpPlayzone.Contracts.Views;
 using SnpPlayzone.Core.Contracts.Services;
 using SnpPlayzone.Core.Services;
+using SnpPlayzone.EfCore.Context;
 using SnpPlayzone.Models;
 using SnpPlayzone.Services;
 using SnpPlayzone.ViewModels;
@@ -87,6 +88,13 @@ public partial class App : Application
 
         // Activation Handlers
         services.AddSingleton<IActivationHandler, ToastNotificationActivationHandler>();
+        var connString = context.Configuration.GetSection(nameof(AppConfig)).GetConnectionString("snp");
+
+        //dbContext
+        services.AddDbContext<AppDbContext>(options =>
+        {
+            options.UseNpgsql(connString);
+        });
 
         // Core Services
         services.AddSingleton<IFileService, FileService>();
@@ -127,6 +135,9 @@ public partial class App : Application
         services.AddTransient<IShellDialogWindow, ShellDialogWindow>();
         services.AddTransient<ShellDialogViewModel>();
 
+        services.AddTransient<ChildEntryViewModel>();
+        services.AddTransient<ChildEntryPage>();
+
         // Configuration
         services.Configure<AppConfig>(context.Configuration.GetSection(nameof(AppConfig)));
         services.AddSingleton<IRightPaneService, RightPaneService>();
@@ -143,5 +154,6 @@ public partial class App : Application
     {
         // TODO: Please log and handle the exception as appropriate to your scenario
         // For more info see https://docs.microsoft.com/dotnet/api/system.windows.application.dispatcherunhandledexception?view=netcore-3.0
+        MessageBox.Show(e.Exception.Message, e.Exception.Source, MessageBoxButton.OK, MessageBoxImage.Error);
     }
 }

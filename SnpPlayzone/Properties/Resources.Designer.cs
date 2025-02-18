@@ -259,5 +259,16 @@ namespace SnpPlayzone.Properties {
                 return ResourceManager.GetString("ShellPageRibbonBackstageTabSettingsHeader", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   Looks up a localized string similar to ChildEntry.
+        /// </summary>
+        public static string ChildEntryPageTitle
+        {
+            get
+            {
+                return ResourceManager.GetString("ChildEntryPageTitle", resourceCulture);
+            }
+        }
     }
 }
